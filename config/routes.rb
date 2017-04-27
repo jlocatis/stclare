@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   get "/about" => "staticpages#about"
   get "/userinfo" => "users#index"
+  get "/edituser" => "users#edit"
   get "/bylaws" => "staticpages#bylaws"
   get "/postexample" => "staticpages#post"
   post "/hoacontact" => "users#send_mail"
+  post "/ownerupdate" => "users#update"
 end
