@@ -40,11 +40,11 @@
           <a href="/about">About</a>
         </li>
         <li>
-          <a href="/contact">Contact</a>
+          <a href="/bylaws">Bylaws/Rules</a>
         </li>
         <% if current_user != nil %>
           <li>
-            <a href="/userinfo"><%= current_user.username %></a><br>
+            <a href="/userinfo"><%= current_user.username %></a>
           </li>
           <li>
             <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>

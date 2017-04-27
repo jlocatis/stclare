@@ -1,31 +1,82 @@
-<p id="notice"><%= notice %></p>
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('/assets/about-bg.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-heading">
+          <h1>Owner Information</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <p>Currently logged in as <strong><%= current_user.username %></strong>.</p>
+      <p><strong>Your Information:</strong></p>
+      <p>Name: <%= current_user.full_name %><br>
+      Mailing Address: <%= current_user.address %><br>
+      Phone Number: <%= current_user.phone_number %><br>
+      Email: <%= current_user.email %><br></p>
 
-<h1>Listing Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Username</th>
-      <th>Password</th>
-      <th>Unit</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.username %></td>
-        <td><%= user.password %></td>
-        <td><%= user.unit %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
+      <p>Your St. Clare Units:</p>
+      <p><% @units.each do |unit| %>
+          <%= unit.unit %> 
+        <% end %>
+      </p>
+      <h3>HOA Board Contact</h3>
+      <p>Want to get in touch with us? Fill out the form below to send us a message!</p>
+      <form action="/hoacontact" method="post">
+        <input type="hidden" name="name" class="form-control" placeholder="Name" id="name" value="<%= current_user.full_name %>">
+        <input type="hidden" name="email" class="form-control" placeholder="Email Address" id="email" value="<%= current_user.email %>">
+        <input type="hidden" name="phone" class="form-control" placeholder="Phone Number" id="phone" value="<%= current_user.phone_number %>">
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Message</label>
+            <textarea rows="5" name="message" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <br>
+        <div id="success"></div>
+          <div class="row">
+            <div class="form-group col-xs-12">
+              <button type="submit" class="btn btn-default">Send</button>
+            </div>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+<hr>
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          <li>
+            <a href="#">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+        <p class="copyright text-muted">&copy; <%= Time.now.strftime("%Y") %> St. Clare Condominiums HOA</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery -->
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!-- Contact Form JavaScript -->
+<script src="/assets/js/jqBootstrapValidation.js"></script>
+<script src="/assets/js/contact_me.js"></script>
+<!-- Theme JavaScript -->
+<script src="/assets/js/clean-blog.min.js"></script>

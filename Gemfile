@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'administrate'
 gem 'devise'
+gem 'pry'
 
 group :development, :test do
   gem 'byebug'

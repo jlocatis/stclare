@@ -7,4 +7,10 @@ class StaticpagesController < ApplicationController
 
   def contact
   end
+
+  def bylaws
+  end
+
+  def post
+  end
 end
