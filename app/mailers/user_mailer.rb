@@ -1,5 +1,6 @@
 class UserMailer < ApplicationMailer
   def hoa_email(message)
     @message = message
-    mail(to: 'jlocatis@gmail.com', subject: 'HOA Owner Message')
+    mail(to: 'somebody@someone.com', subject: 'HOA Owner Message')
+  end
 end

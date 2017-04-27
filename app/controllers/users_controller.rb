@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token, only: [:send_mail]
 
   def index
     @units = Unit.where(owner_id: current_user.id)
@@ -24,9 +24,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def send_mail(params)
-    binding.pry
-    UserMailer.hoa_email(params).deliver
+  def send_mail
+    UserMailer.hoa_email(params).deliver_now
     flash[:notice] = 'An email has been sent to the HOA board. You should receive a response shortly.'
     redirect_to :root
   end

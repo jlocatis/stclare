@@ -5,10 +5,10 @@
 </head>
 <body>
   <h1>St. Clare Condominiums HOA Owner Contact</h1>
-  <p>From <strong><%= @message.name %></strong></p>
+  <p>From <strong><%= @message["name"] %></strong></p>
   <p><strong>Message:</strong></p>
-  <p><%= @message.message %></p>
-  <p>To respond, please email them by clicking <a href="mailto:<%= @message.email %>">here</a> or calling them at <%= @message.phone %></p>
+  <p><%= @message["message"] %></p>
+  <p>To respond, please email them by clicking <a href="mailto:<%= @message["email"] %>">here</a> or calling them at <%= @message["phone"] %>.</p>
   <p>This message was generated automatically, replying to it won't work :(</p>
 </body>
 </html>
