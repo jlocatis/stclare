@@ -16,6 +16,7 @@ class UserDashboard < Administrate::BaseDashboard
     phone_number: Field::String,
     admin: Field::Boolean,
     updated_at: Field::DateTime,
+    email: Field::Email,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -32,6 +33,7 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :username,
+    :email,
     :address,
     :phone_number,
     :units,
@@ -45,6 +47,7 @@ class UserDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :username,
     :password,
+    :email,
     :full_name,
     :address,
     :phone_number,
