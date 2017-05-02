@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   get "/bylaws" => "staticpages#bylaws"
   get "/postexample" => "staticpages#post"
   post "/hoacontact" => "users#send_mail"
-  post "/ownerupdate" => "users#update"
+  post "/ownerupdate" => "users#update_user"
 end

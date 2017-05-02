@@ -16,32 +16,32 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <p>Currently logged in as <strong><%= current_user.username %></strong></p>
       <h3>Update Your Information</h3>
-        <form id="contactForm" action="/ownerupdate" method="post">
+        <form action="/ownerupdate" method="post">
           <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
               <label>Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Your Full Name" required data-validation-required-message="Please enter your name." value="<%= current_user.full_name %>">
+              <input type="text" class="form-control" name="name" placeholder="Your Full Name" required data-validation-required-message="Please enter your name." value="<%= current_user.full_name %>">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
               <label>Mailing Address</label>
-              <input class="form-control" placeholder="Mailing Address" id="address" required data-validation-required-message="Please enter an address." value="<%= current_user.address %>"></textarea>
+              <input class="form-control" placeholder="Mailing Address" name="address" required data-validation-required-message="Please enter an address." value="<%= current_user.address %>"></textarea>
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
               <label>Phone Number</label>
-              <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number." value="<%= current_user.phone_number %>">
+              <input type="tel" class="form-control" placeholder="Phone Number" name="phone" required data-validation-required-message="Please enter your phone number." value="<%= current_user.phone_number %>">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
               <label>Email Address</label>
-              <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address." value="<%= current_user.email %>">
+              <input type="email" class="form-control" placeholder="Email Address" name="email" required data-validation-required-message="Please enter your email address." value="<%= current_user.email %>">
               <p class="help-block text-danger"></p>
             </div>
           </div>

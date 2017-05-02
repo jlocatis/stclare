@@ -1,18 +1,15 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  skip_before_action :verify_authenticity_token, only: [:send_mail, :update]
+  skip_before_action :verify_authenticity_token, only: [:send_mail, :update_user]
 
   def index
     @units = Unit.where(owner_id: current_user.id)
   end
 
-  # GET /users/1/edit
   def edit
   end
 
-  # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
-  def update
+  def update_user
     @user = current_user
     @user.full_name = params[:name]
     @user.email = params[:email]
