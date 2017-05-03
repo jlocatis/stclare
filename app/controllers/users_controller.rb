@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:send_mail, :update_user]
 
   def index
-    @units = Unit.where(owner_id: current_user.id)
+    @units = Unit.where(user_id: current_user.id)
   end
 
   def edit
